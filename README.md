@@ -42,7 +42,7 @@ npm start
 
 ## Authors
 
-The author ChessBot is [Joey Malvinni](https://github.com/joeymalvinni)
+The author of ChessBot is [Joey Malvinni](https://github.com/joeymalvinni)
 
 [List of all contributors](https://github.com/joeymalvinni/ChessBot/graphs/contributors)
 
