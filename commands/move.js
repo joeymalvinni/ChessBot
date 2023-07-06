@@ -36,7 +36,7 @@ module.exports = {
                                 otherPlayer = game.player1;
                             }
 
-                            if (game.gameInfo().isCheckmate) {
+                            if (game.gameInfo().inCheckmate) {
                                 let newElos = updateElo(interaction.user.id, otherPlayer.id, 0);
                     
                                 const checkmateEmbed = new EmbedBuilder()
@@ -44,7 +44,7 @@ module.exports = {
                                     .setTitle(`${otherPlayer.username} was checkmated by ${interaction.user.username}.`)
                                     .setDescription(`<@${interaction.user.id}> updated elo: ${newElos.player1}\n<@${otherPlayer.id}> updated elo: ${newElos.player2}`)
                                     .setTimestamp();
-                                await interaction.followUp({ embeds: [checkmateEmbed] });
+                                await interaction.reply({ embeds: [checkmateEmbed] });
                             } else if (game.gameInfo().isDraw || game.gameInfo().inThreefoldRep || game.gameInfo().inStalemate || game.gameInfo().insufficientMaterial) {
                                 let newElos = updateElo(interaction.user.id, otherPlayer.id, 0.5);
                     
@@ -53,7 +53,7 @@ module.exports = {
                                     .setTitle(`${otherPlayer.username} drew with ${interaction.user.username}.`)
                                     .setDescription(`<@${interaction.user.id}> updated elo: ${newElos.player1}\n<@${otherPlayer.id}> updated elo: ${newElos.player2}`)
                                     .setTimestamp();
-                                await interaction.followUp({ embeds: [drawEmbed] });
+                                await interaction.reply({ embeds: [drawEmbed] });
                             }
 
                             playedGame(otherPlayer.id, 1)
