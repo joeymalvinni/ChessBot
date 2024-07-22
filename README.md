@@ -1,3 +1,7 @@
+> [!WARNING]  
+> As of July 22, 2024, this project has not received work in over a year. Due to a lack of updates, this project is being archived. 
+
+
 # ChessBot
 A sophisticated Discord chess bot, written with Discord.js and Node.js. 
 
